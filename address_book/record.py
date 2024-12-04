@@ -1,4 +1,4 @@
-from address_book.fields import Name, Phone
+from .fields import Name, Phone
 
 
 class Record:
