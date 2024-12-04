@@ -1,4 +1,6 @@
-from address_book import AddressBook, Record
+from address_book.address_book import AddressBook
+from address_book.record import Record
+
 
 def main():
     # Створення нової адресної книги
