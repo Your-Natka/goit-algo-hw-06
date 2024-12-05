@@ -23,26 +23,18 @@ def main():
 
    # Знаходження та редагування телефону для John
     john = book.find("John")
-    if john:
-        john.edit_phone("1234567890", "1112223333")
-        print("\nПісля редагування номера у записі John:")
-        print(john)  # Виведення: Contact name: John, phones: 1112223333; 5555555555
+    john.edit_phone("1234567890", "1112223333")
+    print(john)  # Виведення: Contact name: John, phones: 1112223333; 5555555555
 
     # Пошук конкретного телефону у записі John
     found_phone = john.find_phone("5555555555")
-    if found_phone:
-        print(f"\n{john.name.value}: {found_phone.value}")  # Виведення: John: 5555555555
-    else:
-        print("\nТелефон 5555555555 не знайдено у записі John.")
-    # Видалення запису Jane
-    try:
-        book.delete("Jane")
-        print("\nЗапис Jane успішно видалено.")
-        print("Поточна адресна книга після видалення:")
-        print(book)
-    except ValueError as e:
-        print(f"Помилка під час видалення запису Jane: {e}")
+    print(f"{john.name.value}: {found_phone.value}")
 
+    # Видалення запису Jane
+    book.delete("Jane")
+
+    print("\nПісля видалення Jane:")
+    print(book)
 
 if __name__ == "__main__":
     main()
