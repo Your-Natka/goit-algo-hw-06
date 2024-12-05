@@ -17,12 +17,18 @@ class Record:
         raise ValueError("Phone number not found.")
 
     def edit_phone(self, old_phone, new_phone):
+    # Перевірка валідності нового номера
+        if not new_phone.isdigit() or len(new_phone) != 10:
+            raise ValueError("New phone number must contain exactly 10 digits.")
+
+        # Видалення старого номера, якщо знайдено
         for p in self.phones:
             if p.value == old_phone:
                 self.phones.remove(p)
                 self.add_phone(new_phone)
                 return
-        raise ValueError("Old phone number not found.")
+    
+    raise ValueError("Old phone number not found.")
 
     def find_phone(self, phone):
         for p in self.phones:
